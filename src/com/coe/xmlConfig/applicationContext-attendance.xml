@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 将HibernateTemplate注入到dao中 -->
+	<bean id="attendanceDao" class="com.coe.daoImp.AttendancetDaoImp">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="informationDao"
+		class="com.coe.daoImp.InformationDaoImp">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<!-- 将DAO注入给Service中 -->
+	<bean id="attendanceService"
+		class="com.coe.serviceImp.AttendanceServiceImp">
+		<property name="attendanceDao" ref="attendanceDao" />
+	</bean>
+	<bean id="iformationService"
+		class="com.coe.serviceImp.InformationServiceImp">
+		<property name="informationDao" ref="informationDao" />
+	</bean>
+	<!-- 将Service注入Action中 -->
+
+
+	<bean name="/findattendance"
+		class="com.coe.action.AttendanceAction">
+		<property name="attendanceService" ref="attendanceService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/saveAttendence"
+		class="com.coe.action.AttendanceAction">
+		<property name="attendanceService" ref="attendanceService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/findAttendencebymh" 
+		class="com.coe.action.AttendanceAction">
+		<property name="attendanceService" ref="attendanceService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/deleteAttendance"
+		class="com.coe.action.AttendanceAction">
+		<property name="attendanceService" ref="attendanceService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/ptyh/saveAttendence"
+		class="com.coe.action.AttendanceAction">
+		<property name="attendanceService" ref="attendanceService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+
+
+</beans>

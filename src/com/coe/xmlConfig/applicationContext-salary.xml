@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 将HibernateTemplate注入到dao中 -->
+	<bean id="salaryDao" class="com.coe.daoImp.SalaryDaoImp">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="informationDao"
+		class="com.coe.daoImp.InformationDaoImp">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<!-- 将DAO注入给Service中 -->
+	<bean id="salaryService"
+		class="com.coe.serviceImp.SalaryServiceImp">
+		<property name="salaryDao" ref="salaryDao" />
+	</bean>
+	<bean id="iformationService"
+		class="com.coe.serviceImp.InformationServiceImp">
+		<property name="informationDao" ref="informationDao" />
+	</bean>
+	<!-- 将Service注入Action中 -->
+
+
+	<bean name="/findAllsalary" class="com.coe.action.SalaryAction">
+		<property name="salaryService" ref="salaryService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/saveSalary" class="com.coe.action.SalaryAction">
+		<property name="salaryService" ref="salaryService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/findSalarybymh" class="com.coe.action.SalaryAction">
+		<property name="salaryService" ref="salaryService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/updateSalary" class="com.coe.action.SalaryAction">
+		<property name="salaryService" ref="salaryService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+	<bean name="/deleteSalary" class="com.coe.action.SalaryAction">
+		<property name="salaryService" ref="salaryService" />
+		<property name="iformationService" ref="iformationService"></property>
+	</bean>
+
+
+</beans>

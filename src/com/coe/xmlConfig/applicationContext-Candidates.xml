@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 将HibernateTemplate注入到dao中 -->
+
+
+	<bean id="candidatesDao" class="com.coe.daoImp.CandidatesDaoImp">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<!-- 将DAO注入给Service中 -->
+
+
+
+	<bean id="candidatesService"
+		class="com.coe.serviceImp.CandidatesServiceImp">
+		<property name="candidatesDao" ref="candidatesDao" />
+	</bean>
+
+	<!-- 将Service注入Action中 -->
+	<bean name="/addCandidates"
+		class="com.coe.action.CandidatesAction">
+		<property name="candidatesService" ref="candidatesService" />
+	</bean>
+	<bean name="/findCandidates"
+		class="com.coe.action.CandidatesAction">
+		<property name="candidatesService" ref="candidatesService" />
+	</bean>
+	<bean name="/updateCandidates"
+		class="com.coe.action.CandidatesAction">
+		<property name="candidatesService" ref="candidatesService" />
+	</bean>
+	<bean name="/deleteCandidates"
+		class="com.coe.action.CandidatesAction">
+		<property name="candidatesService" ref="candidatesService" />
+	</bean>
+
+	<bean name="/findCandidatesbymh"
+		class="com.coe.action.CandidatesAction">
+		<property name="candidatesService" ref="candidatesService" />
+	</bean>
+
+
+
+
+
+
+</beans>

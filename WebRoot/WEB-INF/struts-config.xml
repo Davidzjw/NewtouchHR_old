@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<action-mappings>
+
+		<!-- INFORMATION -->
+		<action path="/login"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="succ" path="/index.html" />
+			<forward name="error" path="/login1.html" />
+			<forward name="ptyhSuc" path="/ptyh/index1.html" />
+			<forward name="ybglSuc" path="/yb_index2.html" />
+		</action>
+		<action path="/regit"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="succ" path="/right.jsp" />
+		</action>
+
+		<action path="/findUserbymh"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="succ" path="/employeebymh.jsp"
+				redirect="false" />
+				<forward name="suc" path="/employee.jsp"
+				redirect="false" />
+				<forward name="yb_succ" path="/yb_employeemh.jsp"
+				redirect="false" />
+				
+		</action>
+
+		<action path="/updateInformation"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+		<action path="/deleteInformation"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<action path="/ptyh/updateInformation"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+
+
+		<!-- CONTRACT -->
+
+		<action path="/contract"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/contract.jsp" />
+		</action>
+
+		<action path="/findContractbymh"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/contractmh.jsp" />
+			<forward name="yb_suc" path="/yb_contractmh.jsp" />
+		</action>
+		<action path="/saveContract"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/contract.jsp" />
+		</action>
+
+		<action path="/updateContract"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<action path="/deleteContract"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<action path="/ptyh/contract"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/ptyh/contract.jsp" />
+		</action>
+
+
+
+		<!-- ATTENDANCE -->
+
+		<action path="/findattendance"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/attendance.jsp" />
+		</action>
+
+		<action path="/findAttendencebymh"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/attendancemh.jsp" />
+			<forward name="yb_suc" path="/yb_attendancemh.jsp" />
+		</action>
+
+		<action path="/saveAttendence"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/attendance.jsp" />
+			<forward name="ybglSuc" path="/yb_attendance.jsp" />
+			
+		</action>
+
+		<action path="/deleteAttendance"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<action path="/ptyh/saveAttendence"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="ptyhSuc" path="/ptyh/attendance.jsp" />
+			<forward name="ybglSuc" path="/ybgl/attendance.jsp" />
+		</action>
+
+		<action path="/ptyh/findattendance"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="ptyhSuc" path="/ptyh/attendance.jsp" />
+			<forward name="ybglSuc" path="/ybgl/attendance.jsp" />
+		</action>
+
+
+
+		<!-- SALARY -->
+		<action path="/findAllsalary"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/salary.jsp" />
+			<forward name="yb_suc" path="/yb_salary.jsp" />
+		</action>
+
+		<action path="/saveSalary"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/salary.jsp" />
+			<forward name="ybsuc" path="/yb_salary.jsp" />
+		</action>
+
+		<action path="/findSalarybymh"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/salarymh.jsp" />
+			<forward name="ybsuc" path="/yb_salarymh.jsp" />
+		</action>
+
+		<action path="/updateSalary"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+		<action path="/deleteSalary"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<!-- NOTICE -->
+		<action path="/addNotice"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/notice.jsp"></forward>
+		</action>
+
+		<action path="/findallNotice"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/notice.jsp" />
+		</action>
+		<action path="/updateNotice"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+		<action path="/deleteNotice"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<!-- RECRUITMENTINFO -->
+		<action path="/addRecruitmentInfo"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/recruitmentinfo.jsp"></forward>
+			<forward name="ybsuc" path="/yb_recruitmentinfo.jsp"></forward>
+		</action>
+
+		<action path="/findAllRecruitmentInfo"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/recruitmentinfo.jsp"></forward>
+			<forward name="yb_suc" path="/yb_recruitmentinfo.jsp"></forward>
+		</action>
+		<action path="/updateRecruitmentinfo"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/recruitmentinfo.jsp"></forward>
+		</action>
+		<action path="/deleteRecruitmentinfo"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/recruitmentinfo.jsp"></forward>
+		</action>
+		<action path="/findRecruitmentInfobymh"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/recruitmentinfomh.jsp"></forward>
+		</action>
+		<!--CANDIDATES  -->
+		<action path="/addCandidates"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/candidates.jsp"></forward>
+			<forward name="yb_suc" path="/yb_candidates.jsp"></forward>
+		</action>
+		<action path="/findCandidates"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/candidates.jsp"></forward>
+		</action>
+		<action path="/updateCandidates"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<action path="/deleteCandidates"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+
+		</action>
+
+		<action path="/findCandidatesbymh"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="suc" path="/candidatesmh.jsp"></forward>
+			<forward name="ybsuc" path="/yb_candidatesmh.jsp"></forward>
+		</action>
+
+
+
+
+		<!-- DY -->
+		<action path="/dyachart"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+		</action>
+
+		<action path="/TrainingMangment"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="Trainingapproval" path="/Trainingapproval.jsp" />
+			<forward name="Trainingplan" path="/Trainingplan.jsp" />
+			<forward name="Trainingevaluation" path="/Trainingevaluation.jsp" />
+			<forward name="Trainingfeedback" path="/Trainingfeedback.jsp" />
+			<forward name="appSuc" path="/Trainingapprovalmh.jsp" />
+			<forward name="planSuc" path="/Trainingplanmh.jsp" />
+			<forward name="evaSuc" path="/Trainingevaluationmh.jsp" />
+			<forward name="fbSuc" path="/Trainingfeedbackmh.jsp" />
+			<forward name="plansuc" path="/Trainingfeedbackdemo.jsp" />
+			
+			
+			<forward name="pt_Trainingapproval" path="/pt_Trainingapproval.jsp" />
+			<forward name="pt_Trainingplan" path="/pt_Trainingplan.jsp" />
+			<forward name="pt_rainingevaluation" path="/pt_rainingevaluation.jsp" />
+			<forward name="pt_Trainingfeedback" path="/pt_Trainingfeedback.jsp" />
+			<forward name="pt_planSuc" path="/pt_Trainingplanmh.jsp" />
+			<forward name="pt_suc" path="/pt_Trainingevaluation.jsp" />
+			<forward name="pt_succ" path="/pt_Trainingevaluation1.jsp" />
+			
+			
+			<forward name="yb_Trainingapproval" path="/yb_Trainingapproval.jsp" />
+			<forward name="yb_Trainingplan" path="/yb_Trainingplan.jsp" />
+			<forward name="yb_Trainingevaluation" path="/yb_Trainingevaluation.jsp" />
+			<forward name="yb_Trainingfeedback" path="/yb_Trainingfeedback.jsp" />
+			<forward name="yb_planSuc" path="/yb_Trainingplanmh.jsp" />
+			<forward name="yb_evaSuc" path="/yb_Trainingevaluationmh.jsp" />
+			<forward name="yb_fbSuc" path="/yb_Trainingfeedbackmh.jsp" />
+			<forward name="yb_appSuc" path="/yb_Trainingapprovalmh.jsp" />
+		</action>
+		
+
+
+
+	</action-mappings>
+</struts-config>
+

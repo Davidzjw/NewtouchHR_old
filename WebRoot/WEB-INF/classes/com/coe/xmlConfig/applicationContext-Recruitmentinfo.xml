@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 将HibernateTemplate注入到dao中 -->
+
+
+	<bean id="recruitmentinfoDao"
+		class="com.coe.daoImp.RecruitmentinfoDaoImp">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<!-- 将DAO注入给Service中 -->
+
+
+
+	<bean id="recruitmentinfoService"
+		class="com.coe.serviceImp.RecruitmentinfoServiceImp">
+		<property name="recruitmentinfoDao" ref="recruitmentinfoDao" />
+	</bean>
+
+	<!-- 将Service注入Action中 -->
+
+	<bean name="/addRecruitmentInfo"
+		class="com.coe.action.RecruitmentinfoAction">
+		<property name="recruitmentinfoService"
+			ref="recruitmentinfoService" />
+	</bean>
+
+	<bean name="/findAllRecruitmentInfo"
+		class="com.coe.action.RecruitmentinfoAction">
+		<property name="recruitmentinfoService"
+			ref="recruitmentinfoService" />
+	</bean>
+	<bean name="/updateRecruitmentinfo"
+		class="com.coe.action.RecruitmentinfoAction">
+		<property name="recruitmentinfoService"
+			ref="recruitmentinfoService" />
+	</bean>
+	<bean name="/deleteRecruitmentinfo"
+		class="com.coe.action.RecruitmentinfoAction">
+		<property name="recruitmentinfoService"
+			ref="recruitmentinfoService" />
+	</bean>
+	<bean name="/findRecruitmentInfobymh"
+		class="com.coe.action.RecruitmentinfoAction">
+		<property name="recruitmentinfoService"
+			ref="recruitmentinfoService" />
+	</bean>
+
+</beans>
